@@ -60,3 +60,7 @@ typings/
 # cordova directories (https://cordova.apache.org/)
 platforms/
 plugins/
+
+# ionic directories (https://ionicframework.com/)
+.sourcemaps/
+www/
