@@ -13,6 +13,7 @@ export class SystemPage {
 	constructor(private device: Device) {
 
 		this.items = [
+			['項目', '資訊'],
 			['cordova', this.device.cordova],
 			['model', this.device.model],
 			['platform', this.device.platform],
