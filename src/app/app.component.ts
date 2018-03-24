@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen'
 import { HomePage } from '../pages/home/home'
 import { ListPage } from '../pages/list/list'
 import { FriendPage } from '../pages/friend/friend'
+import { PaymentPage } from '../pages/payment/payment'
+import { ReceiptPage } from '../pages/receipt/receipt'
 import { SystemPage } from '../pages/system/system'
 
 @Component({
@@ -26,9 +28,10 @@ export class MyApp {
 			{ title: '首頁', component: HomePage },
 			{ title: 'List', component: ListPage },
 			{ title: '朋友', component: FriendPage },
+			{ title: '轉帳', component: PaymentPage },
+			{ title: '收款', component: ReceiptPage },
 			{ title: '系統', component: SystemPage },
 		]
-
 	}
 
 	initializeApp() {

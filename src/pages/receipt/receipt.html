@@ -1,0 +1,16 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>List</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-item>
+		<ion-label>增強亮度</ion-label>
+		<ion-checkbox color="dark" [(ngModel)]="brightness_checkbox" (ionChange)="updateBrightness()"></ion-checkbox>
+	</ion-item>
+	<div id="qrcode"></div>
+</ion-content>

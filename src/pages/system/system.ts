@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-
 import { Device } from '@ionic-native/device'
 
 @Component({
