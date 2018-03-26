@@ -1,0 +1,64 @@
+page-signIn {
+    text-align: center;
+    .fixed-content {
+        background: #424242;
+    }
+    hr {
+        border-top: 2px solid #535353;
+        margin: 0rem;
+    }
+    .img_box {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 40vw;
+            height: 40vw;
+        }
+        h1 {
+            font-size: 5rem;
+            margin: 1rem;
+            color: white;
+        }
+    }
+    .text_box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1rem;
+        .orange {
+            color: #ED7D31;
+        }
+        .gray {
+            color: #595959;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        .white {
+            color: white;
+        }
+    }
+    .big {
+        font-size: 2rem;
+    }
+    .small {
+        font-size: 1.5rem;
+    }
+    .input_box {
+        margin: 5vw;
+        ion-item {
+            background-color: #535353;
+            ion-icon {
+                margin-right: 1rem;
+            }
+            ion-input {
+                color: white;
+            }
+        }
+    }
+    button {
+        width: 90vw;
+    }
+}

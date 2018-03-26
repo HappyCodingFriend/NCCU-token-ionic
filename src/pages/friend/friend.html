@@ -9,12 +9,26 @@
 
 <ion-content>
 	<ion-list>
+		<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 		<ion-item *ngFor="let item of items">
 			<ion-avatar item-start>
-				<img src="{{item.img}}">
+				<img src="assets/imgs/{{item.friendID}}.jpg">
 			</ion-avatar>
 			<h2>{{item.name}}</h2>
-			<p>{{item.content}}</p>
+			<p>{{item.friendID}}</p>
 		</ion-item>
 	</ion-list>
+	<ion-fab bottom right>
+		<button ion-fab mini>
+			<ion-icon name="add"></ion-icon>
+		</button>
+		<ion-fab-list side="top">
+			<button ion-fab (click)="addID()">
+				<ion-icon name="text"></ion-icon>
+			</button>
+			<button ion-fab (click)="addQR()">
+				<ion-icon name="qr-scanner"></ion-icon>
+			</button>
+		</ion-fab-list>
+	</ion-fab>
 </ion-content>

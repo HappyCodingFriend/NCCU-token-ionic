@@ -12,15 +12,15 @@
 	<ion-grid>
 		<ion-row>
 			<ion-col col-6>
-				<ion-card>
-					<img src="assets/imgs/card-saopaolo.jpg" />
+				<ion-card (click)="go('friend')">
+					<img src="assets/imgs/friend.jpg" />
 					<div class="card-title">好友</div>
 					<div class="card-subtitle">41 Listings</div>
 				</ion-card>
 			</ion-col>
 			<ion-col col-6>
-				<ion-card>
-					<img src="assets/imgs/card-saopaolo.jpg" />
+				<ion-card (click)="go('detail')">
+					<img src="assets/imgs/detail.jpg" />
 					<div class="card-title">明細</div>
 					<div class="card-subtitle">64 Listings</div>
 				</ion-card>
@@ -28,15 +28,15 @@
 		</ion-row>
 		<ion-row>
 			<ion-col col-6>
-				<ion-card>
-					<img src="assets/imgs/card-saopaolo.jpg" />
+				<ion-card (click)="go('rate')">
+					<img src="assets/imgs/rate.jpg" />
 					<div class="card-title">匯率</div>
 					<div class="card-subtitle">72 Listings</div>
 				</ion-card>
 			</ion-col>
 			<ion-col col-6>
-				<ion-card>
-					<img src="assets/imgs/card-saopaolo.jpg" />
+				<ion-card (click)="go('personal')">
+					<img src="assets/imgs/personal.jpg" />
 					<div class="card-title">我的帳戶</div>
 					<div class="card-subtitle">28 Listings</div>
 				</ion-card>

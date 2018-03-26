@@ -1,7 +1,9 @@
 import { Component } from '@angular/core'
 import { Brightness } from '@ionic-native/brightness'
 
-declare var QRCode
+import { Storage } from '@ionic/storage'
+
+declare let QRCode
 
 @Component({
 	selector: 'page-receipt',
@@ -9,17 +11,24 @@ declare var QRCode
 })
 export class ReceiptPage {
 	brightness_checkbox: boolean
+	qrcode: object
 
-	constructor(private brightness: Brightness) {
+	constructor(private storage: Storage, private brightness: Brightness) {
 
 	}
 
-	qrcode = new QRCode('qrcode', {
-		text: '123',
-		colorDark: '#000000',
-		colorLight: '#ffffff',
-		correctLevel: QRCode.CorrectLevel.H
-	})
+	ngOnInit() {
+		this.storage.get('user').then((user) => {
+			console.log(user)
+			
+			this.qrcode = new QRCode('qrcode', {
+				text: encodeURIComponent(JSON.stringify(user)),
+				colorDark: '#000000',
+				colorLight: '#ffffff',
+				correctLevel: QRCode.CorrectLevel.H
+			})
+		})
+	}
 
 	updateBrightness() {
 		if (this.brightness_checkbox) {
@@ -30,3 +39,4 @@ export class ReceiptPage {
 		}
 	}
 }
+

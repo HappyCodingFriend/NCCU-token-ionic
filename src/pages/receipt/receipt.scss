@@ -1,3 +1,10 @@
-page-list {
-
+page-receipt {
+    #qrcode {
+        margin: 10vw auto;
+        img {
+            height: 80vw;
+            width: 80vw;
+            margin: auto;
+        }
+    }
 }

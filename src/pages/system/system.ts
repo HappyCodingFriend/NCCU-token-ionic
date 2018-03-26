@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
+
 import { Device } from '@ionic-native/device'
+import { Storage } from '@ionic/storage'
 
 @Component({
 	selector: 'page-friend',
@@ -7,12 +9,12 @@ import { Device } from '@ionic-native/device'
 })
 export class SystemPage {
 
- 	items: Array<Array<any>>
+	deviceItems: Array<Array<any>>
+	storageItems: Array<Array<any>>
 
-	constructor(private device: Device) {
+	constructor(private device: Device, private storage: Storage) {
 
-		this.items = [
-			['項目', '資訊'],
+		this.deviceItems = [
 			['cordova', this.device.cordova],
 			['model', this.device.model],
 			['platform', this.device.platform],
@@ -22,5 +24,18 @@ export class SystemPage {
 			['isVirtual', this.device.isVirtual],
 			['serial', this.device.serial],
 		]
+
+		this.storageItems = [
+			['driver', this.storage.driver]
+		]
+		this.storage.get('jwt').then((jwt) => {
+			this.storageItems.push(['jwt', jwt != null])
+		})
+		this.storage.ready().then((val) => {
+			this.storageItems.push(['ready', val])
+		})
+		this.storage.length().then((val) => {
+			this.storageItems.push(['length', val])
+		})
 	}
 }

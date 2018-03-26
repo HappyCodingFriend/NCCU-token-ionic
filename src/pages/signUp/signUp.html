@@ -1,0 +1,44 @@
+<ion-content>
+
+	<div class="text_box big">
+		<div class="orange" (click)="signIn()">Log in</div>
+		<div class="gray">or</div>
+		<div class="white">Sign up</div>
+	</div>
+
+	<div class="input_box">
+		<ion-item>
+			<ion-label fixed>學號</ion-label>
+			<ion-input [(ngModel)]="ID" type="text" value="103703017"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>姓名</ion-label>
+			<ion-input [(ngModel)]="name" type="text" value="晨禾"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>E-mail</ion-label>
+			<ion-input [(ngModel)]="email" type="email" value="test@email.com"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>設定密碼</ion-label>
+			<ion-input [(ngModel)]="password" type="password" value="841015"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>確認密碼</ion-label>
+			<ion-input [(ngModel)]="password" type="password" value="841015"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>公鑰</ion-label>
+			<ion-input [(ngModel)]="address" type="test" value=""></ion-input>
+		</ion-item>
+	</div>
+
+	<button ion-button outline color="light" (click)="create()">產生公私鑰</button>
+	<button ion-button outline color="light" (click)="signUp()">登入</button>
+
+</ion-content>

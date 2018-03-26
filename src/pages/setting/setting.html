@@ -1,0 +1,27 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>設定</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-list-header>
+			設定
+		</ion-list-header>
+		<ion-item *ngFor="let item of items">
+			<ion-label>{{item[0]}}</ion-label>
+			<ion-toggle checked="{{item[1]}}"></ion-toggle>
+		</ion-item>
+	</ion-list>
+	<ion-list>
+		<ion-list-header>
+			系統
+		</ion-list-header>
+		<ion-item>帳戶資訊</ion-item>
+		<ion-item (click)="signOut()">登出</ion-item>
+	</ion-list>
+</ion-content>

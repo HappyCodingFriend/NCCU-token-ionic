@@ -1,0 +1,35 @@
+<ion-content>
+
+	<div class="img_box">
+		<img src="assets/imgs/logo.png">
+		<h1>政大錢包</h1>
+	</div>
+
+	<hr>
+
+	<div class="text_box big">
+		<div class="orange">Log in</div>
+		<div class="gray">or</div>
+		<div class="white" (click)="signUp()">Sign up</div>
+	</div>
+
+	<div class="input_box">
+		<ion-item>
+			<ion-label fixed>
+				<ion-icon name="mail"></ion-icon>學號</ion-label>
+			<ion-input [(ngModel)]="ID" type="text" value="103703017"> type="text"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label fixed>
+				<ion-icon name="lock"></ion-icon>密碼</ion-label>
+			<ion-input [(ngModel)]="password" type="password" value="841015"></ion-input>
+		</ion-item>
+	</div>
+
+	<button ion-button outline color="light" (click)="signIn()">登入</button>
+
+	<div class="text_box small">
+		<div class="gray">Forgot password?</div>
+		<div class="white">Recover here.</div>
+	</div>
+</ion-content>

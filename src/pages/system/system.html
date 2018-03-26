@@ -8,14 +8,37 @@
 </ion-header>
 
 <ion-content>
-	<ion-list>
-		<ion-item *ngFor="let item of items">
-			<ion-label>
+	<div padding>
+		<ion-segment [(ngModel)]="pet">
+			<ion-segment-button value="Device">
+				Device
+			</ion-segment-button>
+			<ion-segment-button value="Storage">
+				Storage
+			</ion-segment-button>
+			<ion-segment-button value="QrCode">
+				QrCode
+			</ion-segment-button>
+		</ion-segment>
+	</div>
+
+	<div [ngSwitch]="pet">
+		<ion-list *ngSwitchCase="'Device'">
+			<ion-item *ngFor="let item of deviceItems">
 				{{item[0]}}
-			</ion-label>
-			<div item-content>
-				{{item[1]}}
-			</div>
-		</ion-item>
-	</ion-list>
+				<ion-note item-end>
+					{{item[1]}}
+				</ion-note>
+			</ion-item>
+		</ion-list>
+
+		<ion-list *ngSwitchCase="'Storage'">
+			<ion-item *ngFor="let item of storageItems">
+				{{item[0]}}
+				<ion-note item-end>
+					{{item[1]}}
+				</ion-note>
+			</ion-item>
+		</ion-list>
+	</div>
 </ion-content>

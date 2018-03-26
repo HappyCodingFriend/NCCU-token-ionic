@@ -3,22 +3,53 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>List</ion-title>
+		<ion-title>轉帳</ion-title>
 	</ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 	<ion-list>
-		<button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-			<ion-icon [name]="item.icon" item-start></ion-icon>
-			{{item.title}}
-			<div class="item-note" item-end>
-				{{item.note}}
-			</div>
-		</button>
+
+		<ion-item>
+			<ion-label>點數種類</ion-label>
+			<ion-select [(ngModel)]="erc" okText="確定" cancelText="取消">
+				<ion-option value="0xCe1Cd66680ebA0a1783e7D88E756A7A23cE72028">宿舍點數</ion-option>
+				<ion-option value="0xab76C487a4eb5eD2E9Eaf587E4853aC259Ef8380">教務處點數</ion-option>
+				<ion-option value="0xd8fd7d4Fa2cBE55573eec5D481CE4BD9A6522AC7">學務處點數</ion-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>轉出數量</ion-label>
+			<ion-input [(ngModel)]="number" type="number" max="10000" min="0"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>轉入對象ID</ion-label>
+			<ion-input [(ngModel)]="targetID" type="text"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>轉入對象姓名</ion-label>
+			<ion-input [(ngModel)]="targetName" type="text"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label fixed>對象地址</ion-label>
+			<ion-input [(ngModel)]="address" type="text" value="1ae8e162bd5f29755e61131d7d379d1b0ff582dd"></ion-input>
+		</ion-item>
+
 	</ion-list>
-	<div *ngIf="selectedItem" padding>
-		You navigated here from
-		<b>{{selectedItem.title}}</b>
-	</div>
+
+	<ion-row>
+		<ion-col col-6>
+			<button ion-button block (click)="friend_bt($event)">好友</button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button block (click)="qrcode_bt($event)">掃描QR Code</button>
+		</ion-col>
+	</ion-row>
+
+	<button ion-button block (click)="pay_bt($event)">轉帳</button>
+
 </ion-content>

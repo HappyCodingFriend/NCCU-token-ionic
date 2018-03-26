@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>公私鑰</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div id="out1">
+
+	</div>
+	<button ion-button (click)="write($event)">產生公私鑰</button>
+
+	<div id="out2">
+
+	</div>
+	<button ion-button (click)="read($event)">讀取公私鑰</button>
+
+</ion-content>

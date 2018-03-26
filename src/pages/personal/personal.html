@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>我的帳戶</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-list-header>
+			我的帳戶
+		</ion-list-header>
+		<ion-item>
+			地址
+			<ion-note item-end>
+				{{address}}
+			</ion-note>
+		</ion-item>
+	</ion-list>
+	<ion-list>
+		<ion-list-header>
+			我的點數
+		</ion-list-header>
+		<ion-item *ngFor="let point of points">
+			{{point.name}}
+			<ion-note item-end>
+				{{point.balance}}
+			</ion-note>
+		</ion-item>
+	</ion-list>
+</ion-content>
